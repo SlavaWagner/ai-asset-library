@@ -9,153 +9,153 @@
 
 ---
 
-## 📖 Was es macht (Overview & Purpose)
+## Overview & Purpose
 
-**ai-asset-library** ist ein autonomes AI-Agenten-Framework zur Massen-Vorgenerierung, prädiktiven Qualitätsbewertung und zum automatisierten Upload von Google Ads Werbemitteln (Performance Max Asset-Gruppen und Responsive Search Ads).
+ai-asset-library is an autonomous AI agent framework designed for mass pre-production, predictive quality evaluation, and automated upload of Google Ads creative assets (Performance Max Asset Groups and Responsive Search Ads).
 
-Statt wenige Anzeigen manuell zu verfassen oder ungetestete Varianten live auf Google Ads zu schalten, automatisiert `ai-asset-library` den gesamten Vorproduktions- und Testing-Prozess:
+Instead of drafting a small number of ads manually or launching unverified variants live on Google Ads, ai-asset-library automates the entire pre-production and testing workflow:
 
-1. **Massen-Vorgenerierung (4.500 Asset-Gruppen / RSAs)**: Erzeugt vor dem Go-Live bis zu **4.500 kardinale Ad-Alternativen** mit hoher Story-Spine-Konsistenz und unkonventionellen Metaphern (z. B. *Asset-Festung*, *Rendite-Teleskop*, *Asymmetrisches Hebelgesetz*).
-2. **AI Asset Decision Matrix Scoring**: Vektorisiert jedes Asset in 6 Dimensionen (D1–D6) und bewertet es auf 5 orthogonalen Achsen (*Conversion, Audience Fit, Hook Interrupt, Tension Curve, Sentiment*), um Noten von **Grade A bis Grade D** zu vergeben.
-3. **20-Agenten Persona Swarm Testing**: Testet Top-Kandidaten gegen ein Swarm von 20 automatisierten Testkunden-Personas (z. B. *Early Tech Adopter*, *Skeptischer Bedenkenträger*, *Kapitalanleger*, *Immobilien-Erbe*) und prognostiziert **CTR (%)**, **CPC (€)**, **CPM (€)** und **Cost per Lead (CPL €)**.
-4. **Desktop Obsidian Vault Export (Vorbedingung)**: Exportiert das komplette Dataset (alle 4.500 Ads inklusive Bewertungen, Scores, Persona-O-Tönen und Projektionen) direkt in einen lokalen **Obsidian Vault** auf dem Desktop (`ObsidianVault_AI_Assets`).
-5. **Selektiver Google Ads API Upload**: Filtert die 4.500 Assets und reicht **ausschließlich die besten Grade A Gewinner** im Status `PAUSED` bei Google Ads ein.
-
----
-
-## ⚡ Was die Hebelwirkung ist (The Strategic Leverage)
-
-Im klassischen Performance Marketing wird wertvolles Werbebudget verbrannt, um über Wochen hinweg ungeprüfte Creatives im Live-Betrieb auf Google Ads zu testen.
-
-**Die Hebelwirkung von `ai-asset-library` liegt in der prädiktiven Vorproduktion:**
-* **99% Pre-Budget Risk Elimination**: Du testest 4.500 Anzeigen-Varianten *bevor* auch nur 1 Euro Media-Budget ausgegeben wird.
-* **Radikale Varianz ohne Phrasen**: Der Algorithmus nutzt psychologische Angles (PAS, AIDA, FAB, DISG) und unkonventionelle Metaphern, um abgedroschene Phrasen wie *"Zeit sparen"* oder *"Jetzt kaufen"* konsequent zu vermeiden.
-* **100% Dateisystem-Transparenz in Obsidian**: Jede Entscheidung, jedes Persona-Feedback und jede Score-Aufschlüsselung liegt als lesbares Markdown mit Wikilinks auf deinem Desktop vor.
-* **Nahtlose Skalierung über MCC**: Ein Klick lädt nur die verifizierten **Grade A Gewinner ($\ge 8.0$)** in dein Google Ads MCC Konto hoch.
+1. **Mass Pre-production (4,500 Asset Groups / RSAs)**: Pre-produces up to **4,500 cardinal ad alternatives** prior to launch with high story-spine consistency and unconventional metaphors (e.g. Asset Fortress, Yield Telescope, Asymmetrical Leverage).
+2. **AI Asset Decision Matrix Scoring**: Vectorizes every asset across 6 dimensions (D1-D6) and evaluates it on 5 orthogonal score axes (Conversion, Audience Fit, Hook Interrupt, Tension Curve, Sentiment) to assign grades from **Grade A to Grade D**.
+3. **20-Agent Persona Swarm Testing**: Tests top candidate creatives against a swarm of 20 automated test customer personas (e.g. Early Tech Adopter, Skeptical Auditor, Real Estate Investor, Asset Heir) to project **CTR (%)**, **CPC ($/€)**, **CPM ($/€)**, and **Cost per Lead (CPL $/€)**.
+4. **Desktop Obsidian Vault Export (Prerequisite)**: Exports the complete dataset (all 4,500 ads including evaluations, scores, persona feedback statements, and projections) directly into a local **Obsidian Vault** on your Desktop (`ObsidianVault_AI_Assets`).
+5. **Selective Google Ads API Upload**: Filters the 4,500 assets and submits **only the top-scoring Grade A winners** in `PAUSED` status to Google Ads via the API.
 
 ---
 
-## 🏗️ Architektur & Agenten-Workflow
+## Strategic Leverage
+
+In traditional performance marketing, valuable ad spend is wasted by running unverified creatives live on Google Ads over several weeks to gather statistical significance.
+
+**The leverage of ai-asset-library lies in predictive pre-production:**
+* **99% Pre-Budget Risk Elimination**: Test 4,500 ad variants before spending a single dollar or euro of media budget.
+* **Radical Asset Variance Without Clichés**: Utilizes structured psychological frameworks (PAS, AIDA, FAB, DISG) and unconventional metaphors to eliminate tired marketing clichés such as "save time" or "buy now".
+* **100% File System Transparency in Obsidian**: Every decision, persona feedback statement, and score breakdown is stored as readable Markdown notes with internal Wikilinks on your local Desktop.
+* **Seamless Scaling via MCC**: Automatically uploads only verified **Grade A winners (>= 8.0)** directly to your Google Ads MCC account.
+
+---
+
+## Architecture & Workflow
 
 ```
-[Kampagnen-Thema / Landingpage URL]
+[Campaign Theme / Landing Page URL]
                │
                ▼
  ┌───────────────────────────┐
- │ 1. Mass Pre-production    │ ──► Erzeugt 4.500 Kardinale Ad-Alternativen
- └─────────────┬─────────────┘     (PMax Asset-Gruppen oder Search RSAs)
+ │ 1. Mass Pre-production    │ ──► Pre-produces 4,500 Cardinal Ad Alternatives
+ └─────────────┬─────────────┘     (PMax Asset Groups or Search RSAs)
                │
                ▼
  ┌───────────────────────────┐
- │ 2. AI Asset Decision      │ ──► 6D Vektorisierung & 5 Score-Achsen
- │    Matrix Scoring         │     Klassifiziert in Grade A, B, C, D
+ │ 2. AI Asset Decision      │ ──► 6D Vectorization & 5 Score Axes
+ │    Matrix Scoring         │     Classifies Ads into Grades A, B, C, D
  └─────────────┬─────────────┘
                │
                ▼
  ┌───────────────────────────┐
- │ 3. 20-Agenten Persona     │ ──► 20 Testkunden-Personas bewerten Creatives
- │    Swarm Testing          │     Gibt O-Ton Feedback & Projektionen (CTR, CPC, CPL)
+ │ 3. 20-Agent Persona       │ ──► 20 Test Customer Personas Evaluate Creatives
+ │    Swarm Testing          │     Returns Persona Feedback & Projections (CTR, CPC, CPL)
  └─────────────┬─────────────┘
                │
                ├─────────────────────────────────────────┐
                ▼                                         ▼
  ┌───────────────────────────┐             ┌───────────────────────────┐
- │ 4. Desktop Obsidian Vault │             │ 5. Selektiver Google Ads  │
- │    Export (Alle 4.500 Ads)│             │    API Upload (Grade A)   │
+ │ 4. Desktop Obsidian Vault │             │ 5. Selective Google Ads   │
+ │    Export (All 4,500 Ads) │             │    API Upload (Grade A)   │
  └───────────────────────────┘             └───────────────────────────┘
 ```
 
 ---
 
-## 📋 Vorbedingungen (Prerequisites)
+## Prerequisites
 
-1. **Node.js**: Version 18.0.0 oder neuer.
-2. **Google Antigravity CLI**: Empfohlen für die globale Agenten-Orchestrierung.
+1. **Node.js**: Version 18.0.0 or higher.
+2. **Google Antigravity CLI**: Recommended for global agent orchestration.
 3. **Google Cloud Project**:
-   - Aktivierte **Google Ads API**.
-   - Erstellte **OAuth 2.0 Client-ID** (Anwendungstyp: *Webanwendung*).
-   - Registrierte Redirect-URI: `http://localhost:8085`.
-4. **Obsidian**: Auf dem Desktop installiert (empfohlen zur Ansicht des generierten Vaults).
+   - Enabled **Google Ads API**.
+   - Created **OAuth 2.0 Client ID** (Application type: Web application).
+   - Configured Authorized Redirect URI: `http://localhost:8085`.
+4. **Obsidian**: Installed on Desktop (recommended for viewing the generated local vault).
 
 ---
 
-## 🔑 Authentifizierungsanleitung (Google Ads MCC OAuth Setup)
+## Authentication Guide (Google Ads MCC OAuth Setup)
 
-1. **Repository klonen & installieren:**
+1. **Clone repository & install dependencies:**
    ```bash
    git clone https://github.com/SlavaWagner/ai-asset-library.git
    cd ai-asset-library
    npm install
    ```
 
-2. **Credentials in `config.json` konfigurieren:**
-   Erstelle eine `config.json` (basierend auf `config.example.json`) und trage deine Daten ein:
+2. **Configure credentials in `config.json`:**
+   Create `config.json` (based on `config.example.json`) and enter your credentials:
    ```json
    {
      "customerId": "123-456-7890",
      "loginCustomerId": "987-654-3210",
-     "developerToken": "DEIN_DEVELOPER_TOKEN",
-     "clientId": "DEINE_GCP_CLIENT_ID.apps.googleusercontent.com",
-     "clientSecret": "DEIN_GCP_CLIENT_SECRET",
+     "developerToken": "YOUR_DEVELOPER_TOKEN",
+     "clientId": "YOUR_GCP_CLIENT_ID.apps.googleusercontent.com",
+     "clientSecret": "YOUR_GCP_CLIENT_SECRET",
      "obsidianVaultPath": "C:\\Users\\User\\Desktop\\ObsidianVault_AI_Assets"
    }
    ```
 
-3. **Interaktiven OAuth2 Setup-Prozess starten:**
+3. **Run the interactive OAuth2 setup tool:**
    ```bash
    ai-asset-library setup
    ```
-   * Das CLI startet einen lokalen Server auf `http://localhost:8085` und öffnet das Google-Login-Fenster.
-   * Nach der Freigabe werden dein Access Token und Refresh Token automatisch in `config.json` gespeichert.
+   * Starts a local server on `http://localhost:8085` and opens the Google authentication page in your browser.
+   * After granting access, your access token and refresh token are saved automatically to `config.json`.
 
 ---
 
-## 💻 Befehlsreferenz (CLI Commands & Options)
+## CLI Command Reference
 
-| Befehl | Beschreibung |
+| Command | Description |
 | :--- | :--- |
-| `ai-asset-library setup` | Startet den interaktiven OAuth2-Authentifizierungsserver auf Port 8085. |
-| `ai-asset-library preproduce` | Generiert bis zu 4.500 Assets, führt Swarm-Testing durch & exportiert den Obsidian Vault. |
-| `ai-asset-library run-workflow` | Führt den kompletten End-to-End Workflow aus (Generierung $\rightarrow$ Obsidian Vault $\rightarrow$ Google Ads Upload). |
-| `ai-asset-library refresh-token` | Erneuert das Google Ads OAuth Access Token manuell. |
+| `ai-asset-library setup` | Starts the interactive OAuth2 authentication server on port 8085. |
+| `ai-asset-library preproduce` | Pre-produces up to 4,500 assets, performs swarm testing, and exports the Obsidian Vault. |
+| `ai-asset-library run-workflow` | Executes the complete end-to-end workflow (Generation -> Obsidian Vault -> Google Ads Upload). |
+| `ai-asset-library refresh-token` | Manually refreshes the Google Ads OAuth access token. |
 
-### Optionale Parameter für `preproduce`:
-- `-c, --count <anzahl>`: Anzahl der zu generierenden Ad-Alternativen (Standard: `4500`).
-- `-k, --track <rsa|pmax>`: Kampagnen-Typ (`rsa` für Search, `pmax` für Performance Max, Standard: `rsa`).
-- `-t, --theme <thema>`: Inhaltlicher Fokus der Kampagne (Standard: `"Immobilien & High-Price Lead Gen"`).
-- `-u, --url <url>`: Ziel-Landingpage URL für Kontext-Scraping.
-- `-v, --vault <pfad>`: Individueller Zielpfad für den Obsidian Vault auf dem Desktop.
-- `--upload`: Lädt die besten Grade A Gewinner nach der Generierung automatisch zu Google Ads hoch.
+### Available Options for `preproduce`:
+- `-c, --count <number>`: Number of ad alternatives to pre-produce (Default: `4500`).
+- `-k, --track <rsa|pmax>`: Campaign track (`rsa` for Search, `pmax` for Performance Max, Default: `rsa`).
+- `-t, --theme <theme>`: Focus theme of the campaign (Default: `"High-Price Lead Gen"`).
+- `-u, --url <url>`: Target landing page URL for context scraping.
+- `-v, --vault <path>`: Custom destination path for the Obsidian Vault on Desktop.
+- `--upload`: Automatically uploads top Grade A winners to Google Ads after pre-production.
 
 ---
 
-## 📂 Desktop Obsidian Vault Struktur
+## Desktop Obsidian Vault Structure
 
-Der generierte Obsidian Vault unter `C:\Users\User\Desktop\ObsidianVault_AI_Assets` ist wie folgt strukturiert:
+The generated Obsidian Vault at `C:\Users\User\Desktop\ObsidianVault_AI_Assets` follows this structure:
 
 ```
 ObsidianVault_AI_Assets/
-├── .obsidian/                       # Obsidian App-Konfiguration
+├── .obsidian/                       # Obsidian app configuration
 ├── 00_Index_MOC/
-│   └── Master_Index.md              # MOC Dashboard mit Statistiken & Links
+│   └── Master_Index.md              # Master Index & Dashboard with stats and quick links
 ├── 01_Grade_A_Winners/
-│   ├── AD-RSA-0001.md               # Einzel-Notes für Grade A Gewinner
+│   ├── AD-RSA-0001.md               # Markdown notes for Grade A winner ads
 │   └── ...
-├── 02_Grade_B_Candidates/           # Markdown Notes für Grade B Kandidaten
+├── 02_Grade_B_Candidates/           # Markdown notes for Grade B test candidates
 ├── 03_Grade_C_D_Archive/
-│   └── Archive_Summary.md           # Archiv-Zusammenfassung für C & D Ads
+│   └── Archive_Summary.md           # Summary note for Grade C and D lower tier assets
 ├── 04_Personas/
-│   ├── SWARM-01_Early_Tech_Adopter.md # 20 Swarm Persona Notes mit Feedback-Log
+│   ├── SWARM-01_Early_Tech_Adopter.md # Notes for 20 Swarm Personas with feedback logs
 │   └── ...
 └── 05_Upload_Batch/
-    └── Grade_A_Upload_Summary.md    # Upload-Protokoll der Google Ads Gewinner
+    └── Grade_A_Upload_Summary.md    # Upload batch summary report for Google Ads
 ```
 
 ---
 
-## 📄 Lizenz (License)
+## License
 
-Dieses Projekt ist unter der **MIT-Lizenz** lizenziert – siehe die [LICENSE](LICENSE) Datei für Details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 

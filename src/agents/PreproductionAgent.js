@@ -8,21 +8,21 @@ const LIFECYCLE_STAGES = ['Lead', 'Prospect', 'SAL', 'Opportunity', 'Customer'];
 const HOOK_TYPES = ['Benefit', 'Proof', 'Urgency', 'Paradox', 'Curiosity', 'Uniqueness'];
 
 const UNCONVENTIONAL_ANGLES = [
-  { angle: 'Asset-Festung', metaphor: 'Der stahlharte Schutzpanzer für dein Vermögen in unruhigen Zeiten.', spin: 'Vermögensarchitektur' },
-  { angle: 'Asymmetrisches Hebelgesetz', metaphor: 'Minimaler Aufwand, maximale Hebelwirkung im Immobilienmarkt.', spin: 'Hebel-Strategie' },
-  { angle: 'Rendite-Teleskop', metaphor: 'Versteckte Potenziale erkennen, die der Wettbewerb völlig übersieht.', spin: 'Weitsicht & Markt-Insider' },
-  { angle: 'Paradoxer Sicherheitsanker', metaphor: 'Warum echtes Wachstum dort entsteht, wo andere Risiken fürchten.', spin: 'Antizyklische Dominanz' },
-  { angle: 'Der Lautlose Beschleuniger', metaphor: 'Lautlose KI-Infrastruktur, die dein Portfolio im Hintergrund vervielfacht.', spin: 'Autonome Wertschöpfung' },
-  { angle: 'Wertschöpfungs-Katalysator', metaphor: 'Wie aus einem gewöhnlichen Asset ein Rendite-Katalysator wird.', spin: 'Transformative Aufwertung' },
-  { angle: 'Garantierte Substanz-Bastion', metaphor: 'Kein spekulativer Schaum – nur echte, unumstößliche Betonsubstanz.', spin: 'Substanzwert' },
-  { angle: 'Der Unsichtbare Wettbewerbs-Vorsprung', metaphor: 'Dein technologischer Vorsprung vor 99% des lokalen Marktes.', spin: 'Technologiedominanz' },
-  { angle: 'Generationen-Brücke', metaphor: 'Ein Fundament, das Werte sichert und über Jahrzehnte trägt.', spin: 'Nachhaltiges Erbe' },
-  { angle: 'Das Gesetz des Ersten Zugs', metaphor: 'Wer den ersten Schritt wagt, sichert sich die Filetstücke am Markt.', spin: 'Pionier-Vorteil' },
-  { angle: 'Die Rentabilitäts-Formel', metaphor: 'Mathematisch berechenbare Überlegenheit im Marktsegment.', spin: 'Formel-Exzellenz' },
-  { angle: 'Bypass-Strategie', metaphor: 'Umschiffe überlaufene Pfade und gelange direkt zum Ziel.', spin: 'Effizienz-Bypass' },
-  { angle: 'Das Stille Fundament', metaphor: 'Solides Fundament ohne Lärm – nachhaltiger Erfolg im Verborgenen.', spin: 'Stille Substanz' },
-  { angle: 'Impuls-Verstärker', metaphor: 'Kleine gezielte Optimierungen verdoppeln das Resultat.', spin: 'Katalytischer Impuls' },
-  { angle: 'Der Ertrags-Magnet', metaphor: 'Attrahiere erstklassige Gelegenheiten durch strategisches Profiling.', spin: 'Magnetisches Marketing' }
+  { angle: 'Asset Fortress', metaphor: 'The solid protective armor for your wealth in volatile markets.', spin: 'Wealth Architecture' },
+  { angle: 'Asymmetrical Leverage', metaphor: 'Minimal effort, maximum strategic leverage in high-ticket markets.', spin: 'Leverage Strategy' },
+  { angle: 'Yield Telescope', metaphor: 'Identify hidden market potential that competitors completely overlook.', spin: 'Foresight & Insider Insight' },
+  { angle: 'Paradoxical Safety Anchor', metaphor: 'Why true exponential growth occurs where others fear market volatility.', spin: 'Contrarian Dominance' },
+  { angle: 'The Silent Accelerator', metaphor: 'Silent AI infrastructure multiplying portfolio returns in the background.', spin: 'Autonomous Value Creation' },
+  { angle: 'Value Creation Catalyst', metaphor: 'Transforming an ordinary asset into a high-yielding growth catalyst.', spin: 'Transformative Upgrade' },
+  { angle: 'Substance Fortress', metaphor: 'Zero speculative fluff - purely verifiable, rock-solid substance.', spin: 'Substance Value' },
+  { angle: 'Invisible Edge', metaphor: 'Your proprietary technological edge over 99% of the local market.', spin: 'Tech Dominance' },
+  { angle: 'Generational Bridge', metaphor: 'A foundation designed to protect and compound wealth across decades.', spin: 'Sustainable Legacy' },
+  { angle: 'First Mover Advantage', metaphor: 'Seizing prime market assets before the wider market reacts.', spin: 'Pioneer Advantage' },
+  { angle: 'Profitability Formula', metaphor: 'Mathematically calculated superiority in your target segment.', spin: 'Formula Excellence' },
+  { angle: 'Efficiency Bypass', metaphor: 'Bypassing congested market channels to reach peak ROI directly.', spin: 'Channel Bypass' },
+  { angle: 'Quiet Foundation', metaphor: 'A quiet, unshakeable foundation delivering consistent compound returns.', spin: 'Silent Substance' },
+  { angle: 'Impulse Amplifier', metaphor: 'Small targeted adjustments that double front-end conversion outcomes.', spin: 'Catalytic Impulse' },
+  { angle: 'Yield Magnet', metaphor: 'Attracting premium high-ticket opportunities through strategic profiling.', spin: 'Magnetic Marketing' }
 ];
 
 export default class PreproductionAgent extends BaseAgent {
@@ -46,7 +46,7 @@ export default class PreproductionAgent extends BaseAgent {
    */
   async preproduceBatch(options = {}) {
     const {
-      theme = 'Immobilien & High-Price Lead Gen',
+      theme = 'High-Price Lead Gen',
       track = 'RSA',
       count = 4500,
       finalUrl = 'https://www.slavawagner.de'
@@ -73,37 +73,37 @@ export default class PreproductionAgent extends BaseAgent {
 
       // Build 15 Headlines <= 30 chars
       const headlines = [
-        `${angleConfig.spin} Exzellenz`,
-        `Entdecke ${angleConfig.angle}`,
-        `Starke ${framework}-Methode`,
-        `Kompakter Markt-Insider`,
-        `Mehr Ertrag ohne Risiko`,
-        `Antizyklische Dominanz`,
-        `Sichere jetzt Substanz`,
-        `Der KI-Hebeleffekt`,
-        `Maximale Wertschöpfung`,
-        `Stabile Rendite sichern`,
-        `Innovativer Vorsprung`,
-        `Exklusive Strategie`,
-        `Planbare Ergebnisse`,
-        `Zukunftssichere Werte`,
-        `Jetzt Analyse anfordern`
+        `${angleConfig.spin} Excellence`,
+        `Discover ${angleConfig.angle}`,
+        `Proven ${framework} Framework`,
+        `Insider Market Insight`,
+        `Maximize Yield Safely`,
+        `Contrarian Dominance`,
+        `Secure Real Substance`,
+        `The AI Leverage Effect`,
+        `Peak Value Creation`,
+        `Stable Compound Growth`,
+        `Innovative Advantage`,
+        `Exclusive Strategy`,
+        `Predictable Results`,
+        `Future-Proof Wealth`,
+        `Request Analysis Now`
       ].map(h => h.substring(0, 30));
 
       // Build 4 Long Headlines (PMax only) <= 90 chars
       const longHeadlines = isPMax ? [
         `${angleConfig.angle}: ${angleConfig.metaphor}`.substring(0, 90),
-        `Wende das ${angleConfig.spin} Prinzip für nachhaltigen Erfolg in deinem Portfolio an.`.substring(0, 90),
-        `Maximale Renditesicherheit durch antizyklische Positionierung und erprobte Frameworks.`.substring(0, 90),
-        `Erhalte jetzt deinen exklusiven Leitfaden für erstklassige Investments & Strategien.`.substring(0, 90)
+        `Apply the ${angleConfig.spin} principle for sustainable growth in your portfolio.`.substring(0, 90),
+        `Maximum return predictability through contrarian positioning and tested frameworks.`.substring(0, 90),
+        `Access your exclusive blueprint for high-performing investments and strategies.`.substring(0, 90)
       ] : [];
 
       // Build 4 Descriptions <= 90 chars
       const descriptions = [
         `${angleConfig.metaphor}`.substring(0, 90),
-        `Schütze dein Kapital vor Inflation und sichere dir erstklassige Erträge.`.substring(0, 90),
-        `Wende das ${framework}-System an und sichere dir jetzt deinen Wettbewerbsvorteil.`.substring(0, 90),
-        `Nutze die Strategie der Marktführer für transparente, berechenbare Resultate.`.substring(0, 90)
+        `Protect your capital against volatility and secure market-leading returns.`.substring(0, 90),
+        `Deploy the ${framework} system to establish your unfair competitive advantage.`.substring(0, 90),
+        `Utilize proven market-leader strategies for transparent, predictable outcomes.`.substring(0, 90)
       ];
 
       const rawAd = {
@@ -149,11 +149,9 @@ export default class PreproductionAgent extends BaseAgent {
     // Evaluate top candidates via 20-Agent Persona Swarm
     this.log(`Deploying 20-Agent Persona Swarm to test and project performance for assets...`);
     for (let i = 0; i < generatedAds.length; i++) {
-      // Swarm evaluate Grade A and B winners, or every 10th for lower tiers to keep execution fast
       if (generatedAds[i].decisionMatrix.grade === 'A' || generatedAds[i].decisionMatrix.grade === 'B' || i % 10 === 0) {
         generatedAds[i].swarmEvaluation = this.agentSwarm.evaluateWithSwarm(generatedAds[i]);
       } else {
-        // Lightweight default swarm metrics for archived ads
         generatedAds[i].swarmEvaluation = {
           approvalRatePercent: 40,
           projections: { predictedCtrPercent: 3.2, predictedCpcEuro: 2.20, predictedCpmEuro: 22.0, predictedCplEuro: 35.0 },
@@ -162,7 +160,6 @@ export default class PreproductionAgent extends BaseAgent {
       }
     }
 
-    // Summary statistics
     const gradeCounts = {
       Grade_A: generatedAds.filter(a => a.decisionMatrix.grade === 'A').length,
       Grade_B: generatedAds.filter(a => a.decisionMatrix.grade === 'B').length,

@@ -69,25 +69,25 @@ tags:
   - agent-swarm
 ---
 
-# 🤖 Persona: ${p.name} (${p.id})
+# Persona: ${p.name} (${p.id})
 
-- **Demografie:** ${p.gender.toUpperCase()} / ${p.age} Jahre
-- **Fokus-Thema:** \`${p.focus}\`
-- **Bewertungs-Bias:** \`${p.bias}\`
-
----
-
-## 📌 Beschreibung & Rolle im Swarm
-${p.name} ist einer von 20 automatisierten Testkunden-Agenten im Predictive Swarm Testing.
-Dieser Agent bewertet Werbeanzeigen auf psychologische Ansprache, Einwandbehandlung und Klickwahrscheinlichkeit im Segment **${p.focus}**.
+- **Demographics:** ${p.gender.toUpperCase()} / ${p.age} years old
+- **Focus Area:** \`${p.focus}\`
+- **Evaluation Bias:** \`${p.bias}\`
 
 ---
 
-## 🔗 Verknüpfte Top-Anzeigen (Grade A)
+## Description & Swarm Role
+${p.name} is one of 20 automated test customer persona agents in predictive swarm testing.
+This agent evaluates ad creatives for psychological positioning, objection handling, and click likelihood within the **${p.focus}** segment.
+
+---
+
+## Linked Top Ads (Grade A)
 ${gradeA.slice(0, 10).map(ad => `- [[${ad.id}]] (Grade A - Score ${ad.decisionMatrix.scores.weightedScore})`).join('\n')}
 
 ---
-[[00_Index_MOC/Master_Index|⬅️ Zurück zum Master Index]]
+[[00_Index_MOC/Master_Index|Back to Master Index]]
 `;
       fs.writeFileSync(personaFile, personaContent, 'utf8');
     }
@@ -117,23 +117,23 @@ tags:
   - framework/${(vec.D1_Framework || ad.framework || 'pas').toLowerCase()}
 ---
 
-# 🎯 Ad Alternative: ${ad.id} (${dm.grade} Grade - Score: ${scores.weightedScore})
+# Ad Alternative: ${ad.id} (${dm.grade} Grade - Score: ${scores.weightedScore})
 
-> **Empfehlung:** ${dm.recommendation || 'Keine Angabe'}
+> **Recommendation:** ${dm.recommendation || 'N/A'}
 
 ---
 
-## 📊 Performance Projections (20-Agent Swarm)
+## Performance Projections (20-Agent Swarm)
 - **Predicted CTR:** \`${proj.predictedCtrPercent || 0}%\`
-- **Predicted CPC:** \`€${proj.predictedCpcEuro || 0}\`
-- **Predicted CPM:** \`€${proj.predictedCpmEuro || 0}\`
-- **Predicted CPL:** \`€${proj.predictedCplEuro || 0}\`
+- **Predicted CPC:** \`$${proj.predictedCpcEuro || 0}\`
+- **Predicted CPM:** \`$${proj.predictedCpmEuro || 0}\`
+- **Predicted CPL:** \`$${proj.predictedCplEuro || 0}\`
 - **Swarm Approval Rate:** \`${swarm.approvalRatePercent || 0}%\`
 
 ---
 
-## 📐 AI Asset Decision Matrix (6D Vectorization)
-| Dimension | Wert |
+## AI Asset Decision Matrix (6D Vectorization)
+| Dimension | Value |
 | :--- | :--- |
 | **D1 Framework** | \`${vec.D1_Framework || ad.framework}\` |
 | **D2 Angle & Metaphor** | \`${vec.D2_Angle || ad.angleConfig?.angle}\` |
@@ -142,7 +142,7 @@ tags:
 | **D5 Hook Type** | \`${vec.D5_HookType || ad.hookType}\` |
 | **D6 Sentiment** | \`${vec.D6_Sentiment || ad.sentimentVal}\` |
 
-### 5 Score-Achsen
+### 5 Score Axes
 - **Conversion Score:** \`${scores.conversion}/10\`
 - **Audience Fit:** \`${scores.audience}/10\`
 - **Hook Interrupt:** \`${scores.hook}/10\`
@@ -151,23 +151,23 @@ tags:
 
 ---
 
-## ✍️ Generierte Anzeigentexte
+## Generated Ad Copy Assets
 
-### Headlines (Max 30 Zeichen)
-${(ad.headlines || []).map((h, idx) => `${idx + 1}. \`${h}\` (${h.length} Zeichen)`).join('\n')}
+### Headlines (Max 30 Chars)
+${(ad.headlines || []).map((h, idx) => `${idx + 1}. \`${h}\` (${h.length} chars)`).join('\n')}
 
-${ad.longHeadlines && ad.longHeadlines.length > 0 ? `### Long Headlines (PMax - Max 90 Zeichen)\n${ad.longHeadlines.map((lh, idx) => `${idx + 1}. \`${lh}\` (${lh.length} Zeichen)`).join('\n')}\n` : ''}
+${ad.longHeadlines && ad.longHeadlines.length > 0 ? `### Long Headlines (PMax - Max 90 Chars)\n${ad.longHeadlines.map((lh, idx) => `${idx + 1}. \`${lh}\` (${lh.length} chars)`).join('\n')}\n` : ''}
 
-### Descriptions (Max 90 Zeichen)
-${(ad.descriptions || []).map((d, idx) => `${idx + 1}. \`${d}\` (${d.length} Zeichen)`).join('\n')}
-
----
-
-## 🗣️ 20-Agent Persona Swarm O-Ton Feedback
-${feedbacks.length > 0 ? feedbacks.map(f => `> **[[${f.personaId}_${f.personaName.replace(/[^a-zA-Z0-9_-]/g, '_')}|${f.personaId} - ${f.personaName}]]** (${f.ageGender}):\n> ${f.oTon}\n`).join('\n') : '*Keine detaillierten Persona-Feedbacks hinterlegt.*'}
+### Descriptions (Max 90 Chars)
+${(ad.descriptions || []).map((d, idx) => `${idx + 1}. \`${d}\` (${d.length} chars)`).join('\n')}
 
 ---
-[[00_Index_MOC/Master_Index|⬅️ Zurück zum Master Index]] | [[05_Upload_Batch/Grade_A_Upload_Summary|📤 Zum Upload-Batch]]
+
+## 20-Agent Persona Swarm Feedback
+${feedbacks.length > 0 ? feedbacks.map(f => `> **[[${f.personaId}_${f.personaName.replace(/[^a-zA-Z0-9_-]/g, '_')}|${f.personaId} - ${f.personaName}]]** (${f.ageGender}):\n> ${f.oTon}\n`).join('\n') : '*No detailed persona feedback recorded.*'}
+
+---
+[[00_Index_MOC/Master_Index|Back to Master Index]] | [[05_Upload_Batch/Grade_A_Upload_Summary|Go to Upload Batch]]
 `;
     };
 
@@ -192,15 +192,15 @@ tags:
   - archive
 ---
 
-# 📦 Grade C & D Archive Summary
+# Grade C & D Archive Summary
 
-Insgesamt wurden **${gradeC.length} Grade C** (Grenzwertig) und **${gradeD.length} Grade D** (Noise) Anzeigen archiviert.
+A total of **${gradeC.length} Grade C** (Borderline) and **${gradeD.length} Grade D** (Noise) ads have been archived for reference.
 
-## Beispiele aus dem Archiv:
+## Sample Archived Assets:
 ${[...gradeC, ...gradeD].slice(0, 50).map(ad => `- **${ad.id}** (${ad.decisionMatrix.grade}): Score \`${ad.decisionMatrix.scores.weightedScore}\` | Angle: \`${ad.angleConfig?.angle}\` | Headline: "${ad.headlines[0]}"`).join('\n')}
 
 ---
-[[00_Index_MOC/Master_Index|⬅️ Zurück zum Master Index]]
+[[00_Index_MOC/Master_Index|Back to Master Index]]
 `;
     fs.writeFileSync(path.join(targetVault, '03_Grade_C_D_Archive', 'Archive_Summary.md'), archiveContent, 'utf8');
 
@@ -213,14 +213,14 @@ tags:
   - google-ads
 ---
 
-# 📤 Google Ads Grade A Winner Upload Summary
+# Google Ads Grade A Winner Upload Summary
 
-Folgende **Grade A Gewinner-Anzeigen** wurden für den Upload in Google Ads im Status \`PAUSED\` ausgewählt:
+The following **Grade A winner ads** were selected for upload to Google Ads in \`PAUSED\` status:
 
-${gradeA.map(ad => `- [[${ad.id}]] | Score: \`${ad.decisionMatrix.scores.weightedScore}\` | Predicted CTR: \`${ad.swarmEvaluation?.projections?.predictedCtrPercent}%\` | CPL: \`€${ad.swarmEvaluation?.projections?.predictedCplEuro}\``).join('\n')}
+${gradeA.map(ad => `- [[${ad.id}]] | Score: \`${ad.decisionMatrix.scores.weightedScore}\` | Predicted CTR: \`${ad.swarmEvaluation?.projections?.predictedCtrPercent}%\` | CPL: \`$${ad.swarmEvaluation?.projections?.predictedCplEuro}\``).join('\n')}
 
 ---
-[[00_Index_MOC/Master_Index|⬅️ Zurück zum Master Index]]
+[[00_Index_MOC/Master_Index|Back to Master Index]]
 `;
     fs.writeFileSync(path.join(targetVault, '05_Upload_Batch', 'Grade_A_Upload_Summary.md'), uploadSummaryContent, 'utf8');
 
@@ -238,39 +238,39 @@ tags:
   - dashboard
 ---
 
-# 🚀 Obsidian AI Asset Library Dashboard
+# Obsidian AI Asset Library Dashboard
 
-Willkommen in deinem lokalen **AI Asset Library Vault**! Hier findest du das vollständige Predictive Testing & Pre-production Archiv für **${ads.length} vorgenerierte ${dataset.track === 'PMAX' ? 'PMax Asset-Gruppen' : 'Responsive Search Ads (RSAs)'}**.
+Welcome to your local **AI Asset Library Vault**. This vault contains the complete predictive testing and pre-production database for **${ads.length} pre-produced ${dataset.track === 'PMAX' ? 'PMax Asset Groups' : 'Responsive Search Ads (RSAs)'}**.
 
 ---
 
-## 📈 Executive Summary Dashboard
+## Executive Summary Dashboard
 
-| Metrik | Wert |
+| Metric | Value |
 | :--- | :--- |
-| **Gesamtzahl vorgenerierter Assets** | \`${ads.length}\` |
-| **Kampagnen-Typ / Track** | \`${dataset.track || 'RSA'}\` |
-| **Kampagnen-Thema** | \`${dataset.theme || 'SEA Lead Gen'}\` |
-| **Grade A Winners (PMF-Skalierung)** | \`${gradeA.length}\` |
-| **Grade B Candidates (Testwürdig)** | \`${gradeB.length}\` |
-| **Grade C Grenzwertig** | \`${gradeC.length}\` |
-| **Grade D Noise (Archiviert)** | \`${gradeD.length}\` |
-| **Bester Predicted CTR** | \`${gradeA[0]?.swarmEvaluation?.projections?.predictedCtrPercent || 7.5}%\` |
-| **Bester Predicted CPL** | \`€${gradeA[0]?.swarmEvaluation?.projections?.predictedCplEuro || 18.50}\` |
+| **Total Pre-produced Assets** | \`${ads.length}\` |
+| **Campaign Track** | \`${dataset.track || 'RSA'}\` |
+| **Campaign Theme** | \`${dataset.theme || 'SEA Lead Gen'}\` |
+| **Grade A Winners (PMF Scale)** | \`${gradeA.length}\` |
+| **Grade B Candidates (Test Worthy)** | \`${gradeB.length}\` |
+| **Grade C Borderline** | \`${gradeC.length}\` |
+| **Grade D Noise (Archived)** | \`${gradeD.length}\` |
+| **Best Predicted CTR** | \`${gradeA[0]?.swarmEvaluation?.projections?.predictedCtrPercent || 7.5}%\` |
+| **Best Predicted CPL** | \`$${gradeA[0]?.swarmEvaluation?.projections?.predictedCplEuro || 18.50}\` |
 
 ---
 
-## 🗂️ Schnellzugriff & Navigation
+## Quick Navigation
 
-- 🏆 **[[05_Upload_Batch/Grade_A_Upload_Summary|📤 Upload-Batch (Top Grade A Winners)]]**
-- 🌟 **Grade A Gewinner (${gradeA.length} Notes):**
+- **[[05_Upload_Batch/Grade_A_Upload_Summary|Upload Batch (Top Grade A Winners)]]**
+- **Grade A Winners (${gradeA.length} Notes):**
 ${gradeA.slice(0, 10).map(ad => `  - [[${ad.id}]] (Score: \`${ad.decisionMatrix.scores.weightedScore}\` | CTR: \`${ad.swarmEvaluation?.projections?.predictedCtrPercent}%\`)`).join('\n')}
-- 🔬 **[[02_Grade_B_Candidates/|🧪 Grade B Test-Kandidaten (${gradeB.length} Ads)]]**
-- 📦 **[[03_Grade_C_D_Archive/Archive_Summary|📦 Grade C & D Archiv (${gradeC.length + gradeD.length} Ads)]]**
-- 🤖 **[[04_Personas/|👥 20-Agent Persona Swarm Übersicht]]**
+- **[[02_Grade_B_Candidates/|Grade B Test Candidates (${gradeB.length} Ads)]]**
+- **[[03_Grade_C_D_Archive/Archive_Summary|Grade C & D Archive (${gradeC.length + gradeD.length} Ads)]]**
+- **[[04_Personas/|20-Agent Persona Swarm Overview]]**
 
 ---
-*Erstellt von Antigravity CLI - ai-asset-library*
+*Created with Google Antigravity CLI*
 `;
     fs.writeFileSync(path.join(targetVault, '00_Index_MOC', 'Master_Index.md'), masterIndexContent, 'utf8');
 

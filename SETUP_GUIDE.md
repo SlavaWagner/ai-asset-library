@@ -1,6 +1,6 @@
 # ai-asset-library Setup & Deployment Guide
 
-Welcome to **ai-asset-library** — the persistent AI Agent framework for Google Ads MCC token authentication, mass pre-production of up to 4,500 PMax Asset Groups and RSAs, 20-Agent Swarm predictive asset testing, and direct Desktop Obsidian Vault export.
+Welcome to **ai-asset-library** - the persistent AI Agent framework for Google Ads MCC token authentication, mass pre-production of up to 4,500 PMax Asset Groups and RSAs, 20-Agent Swarm predictive asset testing, and direct Desktop Obsidian Vault export.
 
 ---
 
@@ -11,7 +11,7 @@ Welcome to **ai-asset-library** — the persistent AI Agent framework for Google
    - Enable the **Google Ads API**.
    - Create an OAuth 2.0 Client ID (Application Type: **Web Application**).
    - Set Authorized Redirect URI to: `http://localhost:8085`.
-3. **Obsidian**: Installed on your desktop (Optional but recommended for viewing the local Vault).
+3. **Obsidian**: Installed on your desktop (optional but recommended for viewing the local Vault).
 
 ---
 
@@ -46,7 +46,7 @@ To generate 4,500 PMax Asset Groups or Responsive Search Ads:
 
 ### Search Track (RSAs):
 ```bash
-ai-asset-library preproduce --track rsa --count 4500 --theme "Immobilien Lead Gen"
+ai-asset-library preproduce --track rsa --count 4500 --theme "Real Estate Lead Gen"
 ```
 
 ### Performance Max Track (PMax):
@@ -54,7 +54,7 @@ ai-asset-library preproduce --track rsa --count 4500 --theme "Immobilien Lead Ge
 ai-asset-library preproduce --track pmax --count 4500 --theme "E-Commerce High-ROAS"
 ```
 
-### Options:
+### Available Options:
 - `-c, --count <number>`: Number of ad alternatives to generate (Default: 4500)
 - `-k, --track <rsa|pmax>`: Campaign track (`rsa` or `pmax`)
 - `-t, --theme <topic>`: Topic focus theme
@@ -69,7 +69,7 @@ ai-asset-library preproduce --track pmax --count 4500 --theme "E-Commerce High-R
 When pre-production completes, `ai-asset-library` automatically exports the full database into an Obsidian Vault on your Desktop (`ObsidianVault_AI_Assets`):
 
 - **`00_Index_MOC/Master_Index.md`**: Master Index & Dashboard with CTR/CPL statistics and quick links.
-- **`01_Grade_A_Winners/`**: High-converting Grade A winner ad notes formatted with YAML Frontmatter, Decision Matrix breakdown, and 20-Agent O-Ton feedback.
+- **`01_Grade_A_Winners/`**: High-converting Grade A winner ad notes formatted with YAML Frontmatter, Decision Matrix breakdown, and 20-Agent persona feedback.
 - **`02_Grade_B_Candidates/`**: Grade B test candidate notes.
 - **`03_Grade_C_D_Archive/`**: Archive summary note for lower-scoring assets.
 - **`04_Personas/`**: 20 Markdown notes for the 20 Persona Agents (`SWARM-01` to `SWARM-20`).
@@ -81,5 +81,4 @@ Open Obsidian -> **"Open folder as vault"** -> Select `C:\Users\User\Desktop\Obs
 
 ## 6. Security Note
 
-> [!WARNING]
 > Never hardcode API keys or OAuth personal tokens in your public repositories. Use environment variables or `config.json` (which is excluded via `.gitignore`). If a personal token is accidentally exposed in chat or code, revoke and regenerate it immediately in your GitHub developer settings.

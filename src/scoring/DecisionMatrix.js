@@ -10,42 +10,37 @@ export default class DecisionMatrix {
    */
   evaluateAd(ad) {
     const d1_framework = ad.framework || 'PAS';
-    const d2_angle = ad.angleConfig?.angle || ad.angle || 'Asset-Festung';
+    const d2_angle = ad.angleConfig?.angle || ad.angle || 'Asset Fortress';
     const d3_lifecycle = ad.lifecycle || 'Lead';
     const d4_sophistication = ad.sophLevel || 2;
     const d5_hook = ad.hookType || 'Benefit';
     const d6_sentiment = ad.sentimentVal !== undefined ? ad.sentimentVal : 0.7;
 
-    // Calculate score components based on asset compliance, length optimization, and vector balance
     let conversion = 7.0;
     let audience = 7.0;
     let hook = 7.0;
     let tension = 7.0;
     let sentiment = Math.min(10.0, d6_sentiment * 10);
 
-    // Headline count and compliance boost
     const headlines = ad.headlines || [];
     const descriptions = ad.descriptions || [];
     
     if (headlines.length >= 15) conversion += 0.8;
     if (descriptions.length >= 4) audience += 0.8;
 
-    // Metaphor and Unconventional Angle boost
-    if (['Asset-Festung', 'Asymmetrisches Hebelgesetz', 'Rendite-Teleskop', 'Paradoxer Sicherheitsanker'].includes(d2_angle)) {
+    if (['Asset Fortress', 'Asymmetrical Leverage', 'Yield Telescope', 'Paradoxical Safety Anchor'].includes(d2_angle)) {
       hook += 1.2;
       tension += 1.0;
       conversion += 0.5;
     }
 
-    // Framework specific boosts
     if (['PAS', 'AIDA'].includes(d1_framework)) {
       tension += 0.8;
       conversion += 0.7;
     }
 
-    // Pseudo-random deterministic hash based on ad ID for natural variance across 4500 ads
     const idNum = parseInt((ad.id || '100').replace(/\D/g, '') || '100', 10);
-    const variance = ((idNum * 13) % 25) / 10 - 1.0; // -1.0 to +1.5
+    const variance = ((idNum * 13) % 25) / 10 - 1.0;
 
     conversion = Math.min(9.9, Math.max(4.0, parseFloat((conversion + variance * 0.4).toFixed(1))));
     audience = Math.min(9.9, Math.max(4.0, parseFloat((audience + variance * 0.3).toFixed(1))));
@@ -53,7 +48,6 @@ export default class DecisionMatrix {
     tension = Math.min(9.9, Math.max(4.0, parseFloat((tension + variance * 0.4).toFixed(1))));
     sentiment = Math.min(9.9, Math.max(4.0, parseFloat((sentiment + variance * 0.2).toFixed(1))));
 
-    // Composite weighted score formula
     const weightedScore = parseFloat((
       (0.35 * conversion) +
       (0.20 * audience) +
@@ -62,19 +56,18 @@ export default class DecisionMatrix {
       (0.15 * sentiment)
     ).toFixed(2));
 
-    // Grade assignment
     let grade = 'C';
-    let recommendation = 'Grenzwertig - Nur Low-Budget testen';
+    let recommendation = 'Borderline - Low budget testing only';
 
     if (weightedScore >= 8.0) {
       grade = 'A';
-      recommendation = 'PMF-Kandidat - Gewinner / Skalieren & Upload zu Google Ads';
+      recommendation = 'PMF Candidate - Winner / Scale & Upload to Google Ads';
     } else if (weightedScore >= 6.5) {
       grade = 'B';
-      recommendation = 'Testwürdig - Mehr Varianten erzeugen';
+      recommendation = 'Test Worthy - Generate further variations';
     } else if (weightedScore < 5.0) {
       grade = 'D';
-      recommendation = 'Noise - Archivieren & Verwürfen';
+      recommendation = 'Noise - Archive & Discard';
     }
 
     return {

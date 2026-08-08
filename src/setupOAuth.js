@@ -7,8 +7,8 @@ export async function runOAuthSetup(port = 8085) {
   const config = getConfig();
 
   if (!config.clientId || !config.clientSecret) {
-    console.log('\n[FEHLER] GCP OAuth Client ID und Client Secret sind nicht in config.json hinterlegt.');
-    console.log('Bitte passe config.json an und trage deine OAuth Credentials ein.\n');
+    console.log('\n[ERROR] GCP OAuth Client ID and Client Secret are missing from config.json.');
+    console.log('Please update config.json with your OAuth credentials.\n');
     return;
   }
 
@@ -24,28 +24,27 @@ export async function runOAuthSetup(port = 8085) {
     `prompt=consent`;
 
   console.log(`\n===========================================================`);
-  console.log(`🔑 GOOGLE ADS OAUTH2 MCC SET-UP TOOL`);
+  console.log(`GOOGLE ADS OAUTH2 MCC SETUP TOOL`);
   console.log(`===========================================================`);
-  console.log(`Starte lokalen Server auf ${redirectUri} ...`);
-  console.log(`\nBitte öffne folgenden Link in deinem Browser für die Freigabe:`);
-  console.log(`\n🔗 ${authUrl}\n`);
+  console.log(`Starting local server on ${redirectUri} ...`);
+  console.log(`\nPlease open the following authorization link in your browser:`);
+  console.log(`\nURL: ${authUrl}\n`);
 
   let server;
 
   return new Promise((resolve, reject) => {
     server = app.listen(port, async () => {
-      // Attempt to open browser automatically
       try {
         await open(authUrl);
       } catch (err) {
-        // Browser auto-open silent ignore
+        // Browser auto-open fallback
       }
     });
 
     app.get('/', async (req, res) => {
       const code = req.query.code;
       if (!code) {
-        res.send('<h1>Fehler: Kein Code empfangen</h1>');
+        res.send('<h1>Error: No authorization code received</h1>');
         return;
       }
 
@@ -69,15 +68,15 @@ export async function runOAuthSetup(port = 8085) {
 
         res.send(`
           <div style="font-family: sans-serif; padding: 40px; text-align: center;">
-            <h1 style="color: #10b981;">✅ Authentifizierung Erfolgreich!</h1>
-            <p>Die Refresh- und Access-Tokens wurden in deiner <code>config.json</code> gespeichert.</p>
-            <p>Du kannst dieses Browser-Fenster jetzt schließen und zur Antigravity CLI zurückkehren.</p>
+            <h1 style="color: #10b981;">Authentication Successful</h1>
+            <p>Your OAuth refresh and access tokens have been stored in <code>config.json</code>.</p>
+            <p>You may close this browser tab and return to the terminal.</p>
           </div>
         `);
 
         console.log(`\n===========================================================`);
-        console.log(`✅ OAUTH AUTHENTIFIZIERUNG ERFOLGREICH!`);
-        console.log(`Access Token und Refresh Token wurden gespeichert in config.json.`);
+        console.log(`OAUTH AUTHENTICATION SUCCESSFUL!`);
+        console.log(`Tokens stored successfully in config.json.`);
         console.log(`===========================================================\n`);
 
         setTimeout(() => {
@@ -87,7 +86,7 @@ export async function runOAuthSetup(port = 8085) {
 
       } catch (err) {
         const details = err.response ? JSON.stringify(err.response.data) : err.message;
-        res.send(`<h1>Fehler bei der Token-Generierung</h1><pre>${details}</pre>`);
+        res.send(`<h1>Token Exchange Error</h1><pre>${details}</pre>`);
         console.error(`Token Exchange Failed: ${details}`);
         server.close();
         reject(err);
