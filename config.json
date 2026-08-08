@@ -1,0 +1,13 @@
+{
+  "customerId": "123-456-7890",
+  "loginCustomerId": "987-654-3210",
+  "developerToken": "YOUR_GOOGLE_ADS_DEVELOPER_TOKEN",
+  "clientId": "YOUR_GCP_OAUTH_CLIENT_ID.apps.googleusercontent.com",
+  "clientSecret": "YOUR_GCP_OAUTH_CLIENT_SECRET",
+  "refreshToken": "",
+  "accessToken": "",
+  "googleAdsVersion": "v16",
+  "geminiApiKey": "YOUR_GEMINI_API_KEY",
+  "activeFramework": "angles",
+  "obsidianVaultPath": "C:\\Users\\User\\Desktop\\ObsidianVault_AI_Assets"
+}
