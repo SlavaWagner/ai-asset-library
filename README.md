@@ -28,7 +28,7 @@ Instead of drafting a small number of ads manually or launching unverified varia
 In traditional performance marketing, valuable ad spend is wasted by running unverified creatives live on Google Ads over several weeks to gather statistical significance.
 
 **The leverage of ai-asset-library lies in predictive pre-production:**
-* **99% Pre-Budget Risk Elimination**: Test 4,500 ad variants before spending a single dollar or euro of media budget.
+* **Pre-Budget Risk Elimination Support**: Test 4,500 ad variants before spending a single dollar or euro of media budget.
 * **Radical Asset Variance Without Clichés**: Utilizes structured psychological frameworks (PAS, AIDA, FAB, DISG) and unconventional metaphors to eliminate tired marketing clichés such as "save time" or "buy now".
 * **100% File System Transparency in Obsidian**: Every decision, persona feedback statement, and score breakdown is stored as readable Markdown notes with internal Wikilinks on your local Desktop.
 * **Seamless Scaling via MCC**: Automatically uploads only verified **Grade A winners (>= 8.0)** directly to your Google Ads MCC account.
