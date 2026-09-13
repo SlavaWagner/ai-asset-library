@@ -119,12 +119,12 @@ In traditional performance marketing, valuable ad spend is wasted by running unv
 
 Alle Befehle werden innerhalb der Google Antigravity CLI (`agy`) ausgeführt:
 
-| Befehl | Argumente / Optionen | Kurzbeschreibung |
-| :--- | :--- | :--- |
-| `ai-asset-library preproduce` | `-c, --count <number>` *(Default: 4500)*<br>`-k, --track <rsa\|pmax>` *(Default: rsa)*<br>`-t, --theme <topic>`<br>`-u, --url <url>`<br>`-v, --vault <path>`<br>`--upload` | Massen-Vorproduktion von bis zu 4.500 Asset Groups oder RSAs: Führt 6-D Vektorisierung, Entscheidungsmatrix-Scoring (Grades A–D) und 20-Agenten Persona Swarm Simulation durch und exportiert das vollständige Repository in den Obsidian Vault auf dem Desktop. Mit `--upload` werden Gewinner-Assets (Grade A) direkt als `PAUSED` in Google Ads angelegt. |
-| `ai-asset-library run-workflow` | `-c, --count <number>` *(Default: 4500)*<br>`-k, --track <rsa\|pmax>` *(Default: rsa)* | Führt die vollständige End-to-End-Pipeline synchron aus: Generierung -> Swarm-Evaluation -> Lokaler Obsidian Vault Export -> Automatischer Google Ads Upload der Top Grade A Gewinner. |
-| `ai-asset-library refresh-token` | Keine | Aktualisiert das Google Ads OAuth2 Access Token manuell und validiert die Verbindung zum MCC. |
-| `ai-asset-library setup` | `-p, --port <number>` *(Default: 8085)* | Startet den interaktiven OAuth2-Authentifizierungsserver auf Port 8085 und speichert die Tokens in `config.json`. |
+| Befehl | Kurzbeschreibung |
+| :--- | :--- |
+| `ai-asset-library preproduce` | Massen-Vorproduktion von bis zu 4.500 Asset Groups oder RSAs: Führt 6-D Vektorisierung, Entscheidungsmatrix-Scoring (Grades A–D) und 20-Agenten Persona Swarm Simulation durch und exportiert das vollständige Repository in den Obsidian Vault auf dem Desktop. Mit `--upload` werden Gewinner-Assets (Grade A) direkt als `PAUSED` in Google Ads angelegt. |
+| `ai-asset-library run-workflow` | Führt die vollständige End-to-End-Pipeline synchron aus: Generierung -> Swarm-Evaluation -> Lokaler Obsidian Vault Export -> Automatischer Google Ads Upload der Top Grade A Gewinner. |
+| `ai-asset-library refresh-token` | Aktualisiert das Google Ads OAuth2 Access Token manuell und validiert die Verbindung zum MCC. |
+| `ai-asset-library setup` | Startet den interaktiven OAuth2-Authentifizierungsserver auf Port 8085 und speichert die Tokens in `config.json`. |
 
 ### Beteiligte KI-Agenten
 
