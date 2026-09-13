@@ -7,6 +7,11 @@
 > **Created with Google Antigravity CLI**  
 > *Persistent AI Agent Swarm & Mass Pre-production Engine for Google Ads (PMax & RSA) with Desktop Obsidian Vault Export & Google Ads MCC OAuth Integration.*
 
+> [!IMPORTANT]
+> **Prerequisite for AI Processing:**
+> Please start Google Antigravity beforehand using the command **`agy`** in your console!
+> Interactive chat sessions, asset generation workflows, and AI processing run exclusively **INSIDE the Antigravity CLI**. In a standard terminal shell outside Antigravity, no AI processing takes place, and static execution outputs are intercepted with a guidance notice.
+
 ---
 
 ## Overview & Purpose

@@ -2,6 +2,11 @@
 
 Welcome to **ai-asset-library** - the persistent AI Agent framework for Google Ads MCC token authentication, mass pre-production of up to 4,500 PMax Asset Groups and RSAs, 20-Agent Swarm predictive asset testing, and direct Desktop Obsidian Vault export.
 
+> [!IMPORTANT]
+> **Prerequisite for AI Processing:**
+> Please start Google Antigravity beforehand using the command **`agy`** in your console!
+> Interactive chat sessions, asset generation workflows, and AI processing run exclusively **INSIDE the Antigravity CLI**. In a standard terminal shell outside Antigravity, no AI processing takes place, and static execution outputs are intercepted with a guidance notice.
+
 ---
 
 ## 1. Prerequisites
