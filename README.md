@@ -115,22 +115,35 @@ In traditional performance marketing, valuable ad spend is wasted by running unv
 
 ---
 
-## CLI Command Reference
+## CLI & Agent Command Reference
 
-| Command | Description |
-| :--- | :--- |
-| `ai-asset-library setup` | Starts the interactive OAuth2 authentication server on port 8085. |
-| `ai-asset-library preproduce` | Pre-produces up to 4,500 assets, performs swarm testing, and exports the Obsidian Vault. |
-| `ai-asset-library run-workflow` | Executes the complete end-to-end workflow (Generation -> Obsidian Vault -> Google Ads Upload). |
-| `ai-asset-library refresh-token` | Manually refreshes the Google Ads OAuth access token. |
+Alle Befehle werden innerhalb der Google Antigravity CLI (`agy`) ausgeführt:
 
-### Available Options for `preproduce`:
-- `-c, --count <number>`: Number of ad alternatives to pre-produce (Default: `4500`).
-- `-k, --track <rsa|pmax>`: Campaign track (`rsa` for Search, `pmax` for Performance Max, Default: `rsa`).
-- `-t, --theme <theme>`: Focus theme of the campaign (Default: `"High-Price Lead Gen"`).
-- `-u, --url <url>`: Target landing page URL for context scraping.
-- `-v, --vault <path>`: Custom destination path for the Obsidian Vault on Desktop.
-- `--upload`: Automatically uploads top Grade A winners to Google Ads after pre-production.
+| Befehl | Argumente / Optionen | Kurzbeschreibung |
+| :--- | :--- | :--- |
+| `ai-asset-library preproduce` | `-c, --count <number>` *(Default: 4500)*<br>`-k, --track <rsa\|pmax>` *(Default: rsa)*<br>`-t, --theme <topic>`<br>`-u, --url <url>`<br>`-v, --vault <path>`<br>`--upload` | Massen-Vorproduktion von bis zu 4.500 Asset Groups oder RSAs: Führt 6-D Vektorisierung, Entscheidungsmatrix-Scoring (Grades A–D) und 20-Agenten Persona Swarm Simulation durch und exportiert das vollständige Repository in den Obsidian Vault auf dem Desktop. Mit `--upload` werden Gewinner-Assets (Grade A) direkt als `PAUSED` in Google Ads angelegt. |
+| `ai-asset-library run-workflow` | `-c, --count <number>` *(Default: 4500)*<br>`-k, --track <rsa\|pmax>` *(Default: rsa)* | Führt die vollständige End-to-End-Pipeline synchron aus: Generierung -> Swarm-Evaluation -> Lokaler Obsidian Vault Export -> Automatischer Google Ads Upload der Top Grade A Gewinner. |
+| `ai-asset-library refresh-token` | Keine | Aktualisiert das Google Ads OAuth2 Access Token manuell und validiert die Verbindung zum MCC. |
+| `ai-asset-library setup` | `-p, --port <number>` *(Default: 8085)* | Startet den interaktiven OAuth2-Authentifizierungsserver auf Port 8085 und speichert die Tokens in `config.json`. |
+
+### Beteiligte KI-Agenten
+
+*   **`PreproductionAgent`**: Generiert bis zu 4.500 Ad-Alternativen basierend auf Story-Spines und psychologischen Blickwinkeln, führt 6-D-Vektorisierung durch und simuliert den 20-Agenten Persona Swarm.
+*   **`ObsidianExportAgent`**: Konvertiert das gesamte Ad-Inventar inklusive aller Matrix-Scores, Persona-Statements und Performance-Prognosen (CTR, CPC, CPL) in verlinkte Markdown-Notizen für den lokalen Obsidian Desktop Vault.
+*   **`UploadAgent`**: Filtert verifizierte Grade A Gewinner (Score $\ge 8.0$) und mutiert diese als pausierte RSAs oder PMax Asset Groups in Google Ads (API v24).
+
+#### Anwendungsbeispiele:
+
+```bash
+# 1. 4.500 Performance Max Asset Groups vorproduzieren und nach Obsidian exportieren:
+ai-asset-library preproduce -k pmax -c 4500 -t "High-Ticket B2B Lead Gen" -u "https://www.slavawagner.de"
+
+# 2. RSA Massenvorproduktion mit automatischem Google Ads Upload der Grade-A-Gewinner:
+ai-asset-library preproduce -k rsa -c 1000 -t "Immobilienverkauf diskret" --upload
+
+# 3. End-to-End Workflow ausführen:
+ai-asset-library run-workflow -k pmax -c 4500
+```
 
 ---
 
